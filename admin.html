@@ -16,9 +16,12 @@
 
     <div class="max-w-2xl w-full bg-[#0b132b] border-2 border-[#C5A059] rounded-3xl p-6 md:p-8 shadow-2xl relative">
         <div class="flex justify-between items-center mb-6 border-b border-gray-800 pb-4">
-            <div>
-                <span class="text-xs text-[#C5A059] font-semibold uppercase tracking-widest">GHOF Language Academy</span>
-                <h1 class="text-2xl font-bold font-['Cinzel'] text-white">Panel Khusus Admin</h1>
+            <div class="flex items-center space-x-3">
+                <img src="216297.png" alt="Logo" class="w-10 h-10 rounded-full border border-[#C5A059] object-cover">
+                <div>
+                    <span class="text-xs text-[#C5A059] font-semibold uppercase tracking-widest">GHOF Language Academy</span>
+                    <h1 class="text-xl font-bold font-['Cinzel'] text-white">Panel Khusus Admin</h1>
+                </div>
             </div>
             <a href="index.html" class="text-xs text-gray-400 hover:text-[#C5A059] border border-gray-700 px-3 py-1.5 rounded-lg transition">
                 <i class="fa-solid fa-arrow-left mr-1"></i> Ke Website Utama
@@ -27,12 +30,12 @@
 
         <!-- Layar Login Admin -->
         <div id="admin-login-view">
-            <p class="text-xs text-gray-400 mb-6">Masukkan kata sandi rahasia admin untuk mengontrol kamera/mikrofon kelas & melihat pesan saran.</p>
+            <p class="text-xs text-gray-400 mb-6">Masukkan kata sandi rahasia admin untuk mengatur pengumuman live, kamera/mikrofon, dan melihat pesan saran.</p>
             <input type="password" id="admin-password" placeholder="Masukkan Password (Default: ghof2026)" class="w-full bg-[#070d1b] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white mb-4 focus:border-[#C5A059] focus:outline-none">
             <button onclick="verifyAdmin()" class="w-full bg-[#C5A059] text-[#070d1b] font-bold py-3.5 rounded-xl hover:opacity-90 transition shadow-lg">
                 Masuk ke Dashboard
             </button>
-            <p id="login-error" class="text-red-400 text-xs mt-3 text-hidden hidden">Password salah! Gunakan: ghof2026</p>
+            <p id="login-error" class="text-red-400 text-xs mt-3 hidden">Password salah! Gunakan: ghof2026</p>
         </div>
 
         <!-- Dashboard Admin (Setelah Login) -->
@@ -45,29 +48,48 @@
                 <button onclick="logoutAdmin()" class="text-xs text-red-400 hover:underline">Keluar</button>
             </div>
 
-            <!-- Kontrol Kamera & Mikrofon -->
-            <div class="bg-[#070d1b] border border-[#C5A059]/40 p-4 rounded-2xl">
-                <h4 class="text-sm font-bold text-white mb-2"><i class="fa-solid fa-video text-[#C5A059] mr-2"></i> Monitor Kamera & Mikrofon Kelas</h4>
-                <p class="text-xs text-gray-400 mb-3">Izinkan akses kamera dan mikrofon perangkat Anda untuk keperluan siaran atau kelas online.</p>
-                <video id="admin-camera-preview" autoplay muted playsinline class="w-full h-48 bg-black rounded-xl object-cover mb-3 border border-gray-800"></video>
-                <div class="flex gap-3">
-                    <button onclick="startMediaAccess()" class="bg-green-600 hover:bg-green-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
-                        <i class="fa-solid fa-camera mr-1"></i> Izinkan Kamera & Mikrofon
+            <!-- FITUR PENGUMUMAN LIVE (TERHUBUNG KE WEB UTAMA) -->
+            <div class="bg-[#070d1b] border border-[#C5A059]/40 p-4 rounded-2xl shadow-lg">
+                <h4 class="text-sm font-bold text-white mb-2"><span class="text-[#C5A059]">📢</span> Buat Pengumuman Live</h4>
+                <p class="text-xs text-gray-400 mb-3">Ketik teks pengumuman di bawah. Teks ini akan langsung berjalan di bagian atas halaman utama pengunjung web!</p>
+                <input type="text" id="admin-announcement-input" placeholder="Contoh: 🔥 PROMO SPESIAL HARI INI..." class="w-full bg-[#0b132b] border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white mb-3 focus:border-[#C5A059] focus:outline-none">
+                <button onclick="saveAnnouncement()" class="bg-[#C5A059] text-[#070d1b] font-bold text-xs px-4 py-2 rounded-lg hover:opacity-90 transition">
+                    <i class="fa-solid fa-bullhorn mr-1"></i> Publikasikan Pengumuman Live
+                </button>
+                <p id="announcement-status" class="text-xs text-green-400 mt-2 hidden">Pengumuman berhasil diperbarui di web utama!</p>
+            </div>
+
+            <!-- KONTROL IZIN PERANGKAT CHROME (KAMERA, MIKROFON, LOKASI & NOTIFIKASI) -->
+            <div class="bg-[#070d1b] border border-[#C5A059]/40 p-4 rounded-2xl shadow-lg">
+                <h4 class="text-sm font-bold text-white mb-2"><i class="fa-solid fa-shield-halved text-[#C5A059] mr-2"></i> Perizinan Sistem Chrome</h4>
+                <p class="text-xs text-gray-400 mb-3">Uji izin bawaan browser Chrome untuk kamera, mikrofon, lokasi, dan notifikasi.</p>
+                
+                <video id="admin-camera-preview" autoplay muted playsinline class="w-full h-40 bg-black rounded-xl object-cover mb-3 border border-gray-800"></video>
+                
+                <div class="grid grid-cols-2 gap-2 mb-2">
+                    <button onclick="startMediaAccess()" class="bg-green-600 hover:bg-green-700 text-white text-[11px] font-bold px-3 py-2 rounded-lg transition">
+                        <i class="fa-solid fa-camera mr-1"></i> Kamera & Mic
                     </button>
-                    <button onclick="stopMediaAccess()" class="bg-red-600/80 hover:bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
-                        Matikan
+                    <button onclick="requestGeolocation()" class="bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-bold px-3 py-2 rounded-lg transition">
+                        <i class="fa-solid fa-location-dot mr-1"></i> Izinkan Lokasi
+                    </button>
+                    <button onclick="requestNotification()" class="bg-purple-600 hover:bg-purple-700 text-white text-[11px] font-bold px-3 py-2 rounded-lg transition">
+                        <i class="fa-solid fa-bell mr-1"></i> Izinkan Notifikasi
+                    </button>
+                    <button onclick="stopMediaAccess()" class="bg-red-600/80 hover:bg-red-600 text-white text-[11px] font-bold px-3 py-2 rounded-lg transition">
+                        Matikan Kamera
                     </button>
                 </div>
                 <p id="media-status" class="text-xs text-yellow-400 mt-2"></p>
             </div>
 
-            <!-- Kotak Masuk Saran Siswa -->
+            <!-- KOTAK MASUK SARAN SISWA -->
             <div>
                 <div class="flex justify-between items-center mb-2">
                     <h4 class="text-sm font-bold text-white"><i class="fa-solid fa-inbox text-[#C5A059] mr-2"></i> Kotak Masuk Saran & Masukan</h4>
                     <button onclick="clearFeedbacks()" class="text-xs text-red-400 hover:underline">Hapus Semua</button>
                 </div>
-                <div id="admin-feedback-list" class="space-y-2 max-h-56 overflow-y-auto text-xs">
+                <div id="admin-feedback-list" class="space-y-2 max-h-48 overflow-y-auto text-xs">
                     <!-- Data dimuat otomatis -->
                 </div>
             </div>
