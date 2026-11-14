@@ -1,4 +1,4 @@
-// 1. Animasi Scroll (Hanya berjalan di index.html)
+// 1. Animasi Scroll Reveal
 function revealOnScroll() {
     const reveals = document.querySelectorAll(".reveal");
     for (let i = 0; i < reveals.length; i++) {
@@ -12,21 +12,39 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-// Toggle Menu HP
+// 2. Perbaikan Tombol Menu HP (Hamburger Menu) yang Stabil
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-if (mobileMenuBtn) {
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenuBtn.addEventListener("click", () => {
+const mobileMenu = document.getElementById("mobile-menu");
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
         mobileMenu.classList.toggle("hidden");
+    });
+
+    // Tutup menu saat klik di luar
+    document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mobileMenu.classList.add("hidden");
+        }
     });
 }
 
 function closeMobileMenu() {
-    const mobileMenu = document.getElementById("mobile-menu");
     if (mobileMenu) mobileMenu.classList.add("hidden");
 }
 
-// 2. Sistem Kirim Saran dari Website Utama
+// 3. Tampilkan Pengumuman Live dari Admin ke Web Utama
+window.addEventListener("DOMContentLoaded", () => {
+    const bannerEl = document.getElementById("live-announcement-banner");
+    const savedAnnouncement = localStorage.getItem("ghof_live_announcement");
+    
+    if (bannerEl && savedAnnouncement) {
+        bannerEl.innerHTML = `<span>${savedAnnouncement} &nbsp;&nbsp;•&nbsp;&nbsp; 🎓 MENTOR LABIIB AL GHOFFUUR &nbsp;&nbsp;•&nbsp;&nbsp; 📜 TERSEDIA KELAS GRATIS & SERTIFIKAT RESMI &nbsp;&nbsp;•&nbsp;&nbsp;</span><span>${savedAnnouncement} &nbsp;&nbsp;•&nbsp;&nbsp; 🎓 MENTOR LABIIB AL GHOFFUUR &nbsp;&nbsp;•&nbsp;&nbsp; 📜 TERSEDIA KELAS GRATIS & SERTIFIKAT RESMI &nbsp;&nbsp;•&nbsp;&nbsp;</span>`;
+    }
+});
+
+// 4. Sistem Kirim Saran dari Website Utama
 const feedbackForm = document.getElementById("feedback-form");
 if (feedbackForm) {
     feedbackForm.addEventListener("submit", function (e) {
@@ -65,11 +83,11 @@ function sendFeedbackToWA() {
     window.open(`https://wa.me/628979517541?text=${text}`, "_blank");
 }
 
-// 3. Sistem Panel Admin (Khusus admin.html)
+// 5. Sistem Panel Admin (Khusus admin.html)
 let mediaStream = null;
 
 function verifyAdmin() {
-    const pass = document.getElementById("admin-password").value;
+    const pass = document.getElementById("admin-password").value.trim();
     if (pass === "ghof2026") {
         document.getElementById("admin-login-view").classList.add("hidden");
         document.getElementById("admin-dashboard-view").classList.remove("hidden");
@@ -87,16 +105,30 @@ function logoutAdmin() {
     stopMediaAccess();
 }
 
+// Publikasikan Pengumuman Live ke Web Utama
+function saveAnnouncement() {
+    const text = document.getElementById("admin-announcement-input").value.trim();
+    if (!text) {
+        alert("Teks pengumuman tidak boleh kosong!");
+        return;
+    }
+    localStorage.setItem("ghof_live_announcement", text);
+    const status = document.getElementById("announcement-status");
+    status.classList.remove("hidden");
+    setTimeout(() => status.classList.add("hidden"), 4000);
+}
+
+// Izin Kamera & Mikrofon Chrome
 async function startMediaAccess() {
     const videoEl = document.getElementById("admin-camera-preview");
     const statusEl = document.getElementById("media-status");
     try {
         mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-        videoEl.srcObject = mediaStream;
-        statusEl.textContent = "✅ Kamera dan Mikrofon berhasil diizinkan & aktif!";
+        if (videoEl) videoEl.srcObject = mediaStream;
+        statusEl.textContent = "✅ Izin Kamera & Mikrofon Chrome Berhasil Diberikan!";
         statusEl.className = "text-xs text-green-400 mt-2";
     } catch (err) {
-        statusEl.textContent = "❌ Akses kamera/mikrofon ditolak atau perangkat tidak mendukung.";
+        statusEl.textContent = "❌ Gagal: Akses ditolak atau browser memblokir (pastikan online/HTTPS).";
         statusEl.className = "text-xs text-red-400 mt-2";
     }
 }
@@ -109,6 +141,44 @@ function stopMediaAccess() {
         if (videoEl) videoEl.srcObject = null;
         const statusEl = document.getElementById("media-status");
         if (statusEl) statusEl.textContent = "Kamera & mikrofon dimatikan.";
+    }
+}
+
+// Izin Lokasi (Geolocation) Bawaan Chrome
+function requestGeolocation() {
+    const statusEl = document.getElementById("media-status");
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                statusEl.textContent = `✅ Lokasi diizinkan! (Lat: ${position.coords.latitude.toFixed(2)}, Lon: ${position.coords.longitude.toFixed(2)})`;
+                statusEl.className = "text-xs text-green-400 mt-2";
+            },
+            (error) => {
+                statusEl.textContent = "❌ Izin lokasi ditolak oleh pengguna.";
+                statusEl.className = "text-xs text-red-400 mt-2";
+            }
+        );
+    } else {
+        statusEl.textContent = "Browser tidak mendukung geolokasi.";
+    }
+}
+
+// Izin Notifikasi Bawaan Chrome
+function requestNotification() {
+    const statusEl = document.getElementById("media-status");
+    if ("Notification" in window) {
+        Notification.requestPermission().then((permission) => {
+            if (permission === "granted") {
+                statusEl.textContent = "✅ Izin Notifikasi Chrome Berhasil Diberikan!";
+                statusEl.className = "text-xs text-green-400 mt-2";
+                new Notification("GHOF Admin", { body: "Notifikasi berhasil diuji dan aktif!" });
+            } else {
+                statusEl.textContent = "❌ Izin notifikasi ditolak.";
+                statusEl.className = "text-xs text-red-400 mt-2";
+            }
+        });
+    } else {
+        statusEl.textContent = "Browser tidak mendukung notifikasi.";
     }
 }
 
