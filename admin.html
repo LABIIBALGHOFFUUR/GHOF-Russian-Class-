@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - GHOF Russian Class</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#070d1b] text-white font-['Plus_Jakarta_Sans',sans-serif] min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-2xl w-full bg-[#0b132b] border-2 border-[#C5A059] rounded-3xl p-6 md:p-8 shadow-2xl relative">
+        <div class="flex justify-between items-center mb-6 border-b border-gray-800 pb-4">
+            <div>
+                <span class="text-xs text-[#C5A059] font-semibold uppercase tracking-widest">GHOF Language Academy</span>
+                <h1 class="text-2xl font-bold font-['Cinzel'] text-white">Panel Khusus Admin</h1>
+            </div>
+            <a href="index.html" class="text-xs text-gray-400 hover:text-[#C5A059] border border-gray-700 px-3 py-1.5 rounded-lg transition">
+                <i class="fa-solid fa-arrow-left mr-1"></i> Ke Website Utama
+            </a>
+        </div>
+
+        <!-- Layar Login Admin -->
+        <div id="admin-login-view">
+            <p class="text-xs text-gray-400 mb-6">Masukkan kata sandi rahasia admin untuk mengontrol kamera/mikrofon kelas & melihat pesan saran.</p>
+            <input type="password" id="admin-password" placeholder="Masukkan Password (Default: ghof2026)" class="w-full bg-[#070d1b] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white mb-4 focus:border-[#C5A059] focus:outline-none">
+            <button onclick="verifyAdmin()" class="w-full bg-[#C5A059] text-[#070d1b] font-bold py-3.5 rounded-xl hover:opacity-90 transition shadow-lg">
+                Masuk ke Dashboard
+            </button>
+            <p id="login-error" class="text-red-400 text-xs mt-3 text-hidden hidden">Password salah! Gunakan: ghof2026</p>
+        </div>
+
+        <!-- Dashboard Admin (Setelah Login) -->
+        <div id="admin-dashboard-view" class="hidden space-y-6">
+            <div class="flex justify-between items-center bg-[#070d1b] p-4 rounded-xl border border-gray-800">
+                <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+                    <span class="text-sm font-bold text-green-400">Status: Admin Terautentikasi</span>
+                </div>
+                <button onclick="logoutAdmin()" class="text-xs text-red-400 hover:underline">Keluar</button>
+            </div>
+
+            <!-- Kontrol Kamera & Mikrofon -->
+            <div class="bg-[#070d1b] border border-[#C5A059]/40 p-4 rounded-2xl">
+                <h4 class="text-sm font-bold text-white mb-2"><i class="fa-solid fa-video text-[#C5A059] mr-2"></i> Monitor Kamera & Mikrofon Kelas</h4>
+                <p class="text-xs text-gray-400 mb-3">Izinkan akses kamera dan mikrofon perangkat Anda untuk keperluan siaran atau kelas online.</p>
+                <video id="admin-camera-preview" autoplay muted playsinline class="w-full h-48 bg-black rounded-xl object-cover mb-3 border border-gray-800"></video>
+                <div class="flex gap-3">
+                    <button onclick="startMediaAccess()" class="bg-green-600 hover:bg-green-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
+                        <i class="fa-solid fa-camera mr-1"></i> Izinkan Kamera & Mikrofon
+                    </button>
+                    <button onclick="stopMediaAccess()" class="bg-red-600/80 hover:bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
+                        Matikan
+                    </button>
+                </div>
+                <p id="media-status" class="text-xs text-yellow-400 mt-2"></p>
+            </div>
+
+            <!-- Kotak Masuk Saran Siswa -->
+            <div>
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="text-sm font-bold text-white"><i class="fa-solid fa-inbox text-[#C5A059] mr-2"></i> Kotak Masuk Saran & Masukan</h4>
+                    <button onclick="clearFeedbacks()" class="text-xs text-red-400 hover:underline">Hapus Semua</button>
+                </div>
+                <div id="admin-feedback-list" class="space-y-2 max-h-56 overflow-y-auto text-xs">
+                    <!-- Data dimuat otomatis -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
