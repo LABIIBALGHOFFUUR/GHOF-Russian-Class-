@@ -1,69 +1,12 @@
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #070d1b;
-    color: #ffffff;
-    overflow-x: hidden;
-}
-
-.marquee-track {
-    display: inline-block;
-    animation: marqueeScroll 25s linear infinite;
-}
-
-.marquee-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes marqueeScroll {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-}
-
-.floating-card {
-    animation: floatAnim 4s ease-in-out infinite;
-}
-
-@keyframes floatAnim {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-}
-
-.btn-shimmer {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-shimmer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.5),
-        transparent
-    );
-    animation: shimmerMove 3s infinite;
-}
-
-@keyframes shimmerMove {
-    0% { left: -100%; }
-    60%, 100% { left: 150%; }
-}
-
-.reveal {
-    opacity: 0;
-    transform: translateY(35px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0px);
-}
+html { scroll-behavior: smooth; }
+body { background-color: #070d1b; color: #ffffff; overflow-x: hidden; }
+.marquee-track { display: inline-block; animation: marqueeScroll 25s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marqueeScroll { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+.floating-card { animation: floatAnim 4s ease-in-out infinite; }
+@keyframes floatAnim { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+.btn-shimmer { position: relative; overflow: hidden; }
+.btn-shimmer::after { content: ""; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent); animation: shimmerMove 3s infinite; }
+@keyframes shimmerMove { 0% { left: -100%; } 60%, 100% { left: 150%; } }
+.reveal { opacity: 0; transform: translateY(35px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0px); }
